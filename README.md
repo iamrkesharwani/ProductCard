@@ -1,16 +1,37 @@
-# React + Vite
+# Product Card Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, display-only React component for showcasing products with image, name, price, rating, description, and optional badges.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Static component with JSX structure
+- ✅ Props for name, price, image, rating, and description
+- ✅ Display-only without state management
+- ✅ Badge support for "on sale" or "new arrival"
+- ✅ Responsive layout with Tailwind CSS
+- ✅ Star rating visualization
 
-## React Compiler
+## Props
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Prop          | Type           | Default                  | Description                        |
+| ------------- | -------------- | ------------------------ | ---------------------------------- |
+| `name`        | string         | "Product Name"           | Product name                       |
+| `price`       | number         | 99.99                    | Product price                      |
+| `image`       | string         | placeholder image        | Product image URL                  |
+| `rating`      | number         | 4.5                      | Rating from 0-5                    |
+| `description` | string         | "A wonderful product..." | Product description                |
+| `badge`       | string \| null | null                     | Badge type: "sale", "new", or null |
 
-## Expanding the ESLint configuration
+## Usage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```jsx
+<ProductCard
+  name="Wireless Headphones"
+  image="https://example.com/headphones.jpg"
+  description="Premium sound quality with active noise cancellation"
+  price={1259}
+  rating={4.5}
+  ratingCount={110}
+  badge="sale"
+/>
+```
